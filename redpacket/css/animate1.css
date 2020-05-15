@@ -1,0 +1,324 @@
+/*animate1.css*/
+@charset "UTF-8";
+
+/*!
+ * animate.css -http://daneden.me/animate
+ * Version - 3.5.1
+ * Licensed under the MIT license - http://opensource.org/licenses/MIT
+ *
+ * Copyright (c) 2016 Daniel Eden
+ */
+
+
+
+.mui-toast-container.mui-active {
+    opacity: 0.7;
+}
+.mui-toast-container {
+    /* line-height: 30px; */
+    position: fixed;
+    z-index: 9999;
+    top: 50%;
+    left: 50%;
+    -webkit-transition: opacity .3s;
+    transition: opacity .3s;
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    opacity: 0;
+    background-color: #000;
+    color: #fff;
+    border-radius: 5px;
+    padding: 0 10px;
+  }
+
+.test{
+  -webkit-animation: flipOutYtest 3s ease;
+  animation: flipOutYtest 3s ease;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+
+@-webkit-keyframes flipInYtest {
+  from {
+    -webkit-transform: perspective(1400px) rotate3d(0, 1, 0, 0deg);
+    transform: perspective(1400px) rotate3d(0, 1, 0, 0deg);
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: perspective(1400px) rotate3d(0, 1, 0, -0deg);
+    transform: perspective(1400px) rotate3d(0, 1, 0, 90deg);
+    opacity: 1;
+  }
+
+
+/*  to {
+    -webkit-transform: perspective(1400px);
+    transform: perspective(1400px);
+    opacity: 1;
+  }*/
+}
+
+.test2{
+  -webkit-animation: flipInYtest 3s ease;
+  animation: flipInYtest 3s ease;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+
+
+.well .well-item img{
+    width: 90%;
+    height: 33.9vw;
+
+}
+.correct{
+  position: absolute;
+  left: 10%;
+  margin-top: 1vw;
+  height: 20vw;
+  width: 84%;
+  overflow: hidden;
+  background-color:#ef5363; 
+  text-align: center;
+  line-height: 20vw;
+  font-size: 20px;
+  color: #fff;
+  display: none;
+  border-radius: 5px;
+}
+
+
+
+
+
+
+*{ margin:0; padding:0;font-family: PingFang-SC-Regular;font-weight: normal;
+    font-style: normal;}
+div {margin:0;padding:0;}
+address,cite,dfn,em,var, i {font-style:normal;}
+body {font-size: 16px;background-color:#fff;}
+table { border-collapse:collapse; border-spacing:0; }
+h1, h2, h3, h4, h5, h6, th,p { font-size: 100%; font-weight: normal;margin:0;padding: 0; }
+button,input,select,textarea{font-size:100%;}
+fieldset,img{border:0;}
+a { text-decoration: none;color: #333; background: none }
+a:hover{text-decoration: none; }
+ul, ol { list-style: none; }
+.icon {
+   width: 1em; height: 1em;
+   vertical-align: -0.15em;
+   fill: currentColor;
+   overflow: hidden;
+}
+* { margin: 0; padding: 0;}
+ul { list-style-type: none;}
+html{
+  height: 100%;
+}
+body {
+     background: #a93c2b url(../img/timg.jpg) no-repeat left top;
+    background-size: 100% 100%;
+    position: absolute;
+}
+/*.container{
+  background:url(timg.jpg);
+  background-size: 100% 100%;
+}*/
+.well {
+    position: relative;
+    overflow: hidden;
+}
+
+/*.opposite-content{
+  background:url(redP.png);
+  background-size: 100% 100%;
+}*/
+
+.well-item{
+    position: relative;
+    float: left;
+    width: 33.33333333%;
+    box-sizing: border-box;
+    margin-top: 10px;
+    text-align: center;
+/*    box-shadow: darkgrey 10px 10px 30px 5px ;*/
+}
+.opposite-content{
+  margin-top: 1vw;
+  height: 20vw;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.well .well-item img{
+    width: 90%;
+    height: 20vw;
+}
+.payment{
+  margin-top: 20px;
+  overflow: hidden;
+}
+.select-m{
+    float: left;
+    margin-left: 10%;
+    width: 80%;
+    margin-top: 2%;
+    height: 50px;
+}
+.select-m .money{
+    float: left;
+    margin-top: 2% ;
+    margin-left: 2.5%;
+    width: 28%;
+    height: 35px; 
+    border:1px solid #fff;
+    text-align: center;
+    line-height: 35px;
+    font-size: 14px;
+    color: #fff;
+    font-weight: bold; 
+}
+.select-m .m-se{
+  background-color: #ec7663;
+}
+
+.clearfix:after{
+    content:"";/*设置内容为空*/
+    height:0;/*高度为0*/
+    line-height:0;/*行高为0*/
+    display:block;/*将文本转为块级元素*/
+    visibility:hidden;/*将元素隐藏*/
+    clear:both;/*清除浮动*/
+}
+.clearfix{
+    zoom:1;/*为了兼容IE*/
+}
+.paybox{
+  margin-top: 10px;
+}
+.pay-red{
+  display: block;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 5px;
+    width: 180px;
+    height: 30px;
+    margin:0 auto;
+    line-height: 30px;
+    background-color: #e82b0d;
+    color: #fff;
+}
+
+.notice{
+  margin-top: 7px;
+}
+.notice ul li .roll{
+  width: 100%;
+  height: 24px;
+  line-height: 24px;
+  color: #eace4c;
+  text-align: center;
+  font-size: 18px;
+}
+.notice-m {
+  width: 100%;
+    height: 49px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    border-top:2px dotted #d89c1e;
+}
+.header{
+width: 45px;
+height: 45px;
+border-radius: 2px;
+float: left;
+margin-top: 2px;
+margin-left: 2px;
+}
+.header img{
+  width: 100%;
+  height: 100%;
+
+}
+.headerTxt{
+float: left;
+margin-left: 10px;
+width: 70%;
+}
+.headerTxt p{
+  margin-top: 2px;
+  font-size: 12px;
+  color: #fff;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.notice-m .ruler{
+display: block;
+width: 12%;
+height: 30px;
+background-color: #c5a927;
+color: #fff;
+font-size: 12px;
+line-height: 30px;
+text-align: center;
+float: right;
+border-radius: 2px;
+margin-right: 5px;
+margin-top: 8px;
+}
+
+.topRec_List ul{ 
+  width:70%;
+  float: left;
+}
+.topRec_List li{ 
+  width:100%; 
+  height:49px;
+}
+/*拆红包*/
+.disabled { pointer-events: none; }
+
+.fanhui{
+  display: none;
+  width: 200px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  margin: 6px auto 0;
+  background-image: linear-gradient(56deg, 
+    #ff9700 0%, 
+    #ff4b04 100%), 
+  linear-gradient(
+    #000000, 
+    #000000);
+  color: #fff;
+  border-radius: 3px;
+  font-size: 16px;
+}
+.fanhui2{
+  display: none;
+  width: 200px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  margin: 200px auto 0;
+ background-image: linear-gradient(
+    #32cd33, 
+    #32cd33), 
+  linear-gradient(
+    #32cd33, 
+    #32cd33);
+  background-blend-mode: normal, 
+    normal;
+  box-shadow: 0px 0px 18px 0px 
+    rgba(4, 0, 0, 0.55);
+  border-radius: 3px;
+  color: #fff;
+  font-size: 16px;
+}

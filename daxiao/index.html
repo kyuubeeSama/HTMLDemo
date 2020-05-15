@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=320,maximum-scale=1.3,user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/load.css" />
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.2/css/bootstrap3/bootstrap-switch.min.css"
+		rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.2/js/bootstrap-switch.min.js"></script>
+	<script src="js/ajax.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/pub.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+	<title>转转乐</title>
+</head>
+<style>
+	.modal-backdrop {
+		opacity: 0.8 !important;
+		filter: alpha(opacity=1) !important;
+	}
+
+	.progress {
+		width: 32%;
+		margin-left: 48px;
+		height: 20px;
+		background: white;
+		border-radius: 20px;
+		border: 1px solid #fff576;
+		box-shadow: none;
+		margin-bottom: 30px;
+		overflow: visible;
+	}
+
+	.progress .progress-bar {
+		border-radius: 20px;
+		-webkit-animation: animate-positive 2s;
+		animation: animate-positive 2s;
+	}
+</style>
+
+<body>
+
+	<div id="itop">
+		<div id="record" class="menu">
+			<img src="img/kj.png" width="25px" data-toggle="modal" data-target="#myModal4" />
+			<p>开奖记录 </p>
+		</div>
+
+		<div id="rules" class="menu">
+			<img src="img/gz.png" width="25px" data-toggle="modal" data-target="#myModal1" />
+			<p>规则</p>
+		</div>
+
+		<div id="add" class="menu">
+			<img src="img/cz.png" width="25px" data-toggle="modal" data-target="#myModal" />
+			<p>充值</p>
+		</div>
+
+		<div id="promote" class="menu">
+			<img src="img/tg.png" width="25px" data-toggle="modal" data-target="#myModal3" />
+			<p>推广</p>
+		</div>
+
+		<div id="set" class="menu">
+			<img src="img/sz.png" width="25px" data-toggle="modal" data-target="#myModal2" />
+			<p>设置</p>
+		</div>
+
+	</div>
+
+	<div id="mmm">
+		<div class="left-bg">
+			<div id="" class="zuo">
+				<span>本期期号</span><br>
+				<span class="a" id="qihao">18</span>
+			</div>
+
+			<div id="" class="zzz">
+				<img src="img/jb.png" width="15px" />
+			</div>
+		</div>
+
+
+		<div class="c-bg">
+			<div id="" class="levn">
+				<div id="levb" class="levn1">
+					<span class="lnum" id="djs"></span>
+				</div>
+			</div>
+
+			<div class="progress lev">
+
+				<div id="prog" class="progress-bar" role="progressbar">
+				</div>
+			</div>
+		</div>
+		<div class="right-bg">
+
+			<div id="" class="zz">
+				<img src="img/rs.png" width="15px" />
+			</div>
+
+			<div id="" class="you">
+				<span>在线人数</span><br>
+				<span class="a" id="zxrs">888</span>
+			</div>
+		</div>
+	</div>
+
+	<!--two 结束-->
+
+	<div id="" class="main">
+		<div id="left" class="left">
+
+
+		</div>
+
+		<div id="centent" class="centent">
+			<div class="one">
+				<div id="onee" class="tb1" onclick="add('onee')">
+
+				</div>
+				<div id="twoe" class="tb2">
+					<div class="t3" onclick="add('twoe')" id="twoe">
+
+					</div>
+					<div class="t4" onclick="add('foure')" id="foure">
+
+					</div>
+				</div>
+				<div id="threee" class="tb3" onclick="add('threee')">
+
+				</div>
+				<span id="da" class="dadada">大</span><br>
+				<span class="dada">
+					奖金2倍竞猜积分
+				</span>
+				<div class="aa">
+					<span class="bb">全网下注:</span><span class="bb" id="anum1"></span>&nbsp;&nbsp;&nbsp;
+					<span class="bb">我的下注:</span><span class="bb" id="mynum1"></span>
+				</div>
+			</div>
+
+			<div class="two">
+
+				<div class="t1">
+
+					<div class="zzb">
+						<span class="bdt" id="anum2">0</span>
+					</div>
+					<div class="zhonj">
+
+						<span id="da" class="dadada">
+							财
+						</span>
+
+						<span class="dada">
+							3倍
+						</span>
+					</div>
+					<div class="zzb">
+						<span class="bdt" id="mynum2">0</span>
+					</div>
+
+				</div>
+				<div class="t2">
+
+					<div class="zzb">
+						<span class="bdt" id="anum4">0</span>
+					</div>
+
+					<div class="zhonj">
+						<span id="da" class="dadada">
+							發
+						</span>
+
+						<span class="dada">
+							5倍
+						</span>
+					</div>
+
+					<div class="zzb">
+						<span class="bdt" id="mynum4">0</span>
+					</div>
+
+
+				</div>
+			</div>
+
+			<div class="three">
+				<span id="da" class="dadada">
+					小
+				</span><br>
+				<span class="dada">
+					奖金2倍竞猜积分
+				</span>
+
+				<div class="aa">
+					<span class="bb">全网下注:</span><span class="bb" id="anum3"></span>&nbsp;&nbsp;&nbsp;
+					<span class="bb">我的下注:</span><span class="bb" id="mynum3"></span>
+				</div>
+			</div>
+			<div style="display: none;">
+				<input type="text" name="tbn1" id="tbn1" value="0" />
+				<input type="text" name="tbn2" id="tbn2" value="0" />
+				<input type="text" name="tbn3" id="tbn3" value="0" />
+				<input type="text" name="tbn4" id="tbn4" value="0" />
+			</div>
+
+		</div>
+
+		<div id="right" class="right">
+
+
+
+		</div>
+
+	</div>
+	<!--  mian结束-->
+
+	<div class="fat">
+		<div class="bottom-title">
+
+			选择下注积分，点击桌面进行竞猜
+
+		</div>
+
+		<div id="" class="butom">
+
+			<div id="" class="face">
+				<div id="" class="aa">
+					<!--自己替换用户图片-->
+					<img src="img/face.jpg" />
+				</div>
+				<span id="nicheng">昵称</span>
+			</div>
+
+			<div id="" class="have">
+				<div id="" class="bgg">
+					<img src="img/mony.png" />
+					<span id="jz">166</span>
+				</div>
+				<div id="huidu" class="noshow">
+
+				</div>
+				<div id="a" class="a">
+					<img src="img/10.png" width="50px" onclick="choose('a')" />
+				</div>
+				<div id="b" class="b">
+					<img src="img/20.png" width="50px" onclick="choose('b')" />
+				</div>
+				<div id="c" class="c">
+					<img src="img/50.png" width="50px" onclick="choose('c')" />
+				</div>
+				<div id="d" class="d">
+					<img src="img/100.png" width="50px" onclick="choose('d')" />
+				</div>
+
+				<div id="e" class="e">
+					<img src="img/rechose.png" width="50px" onclick="choose('e')" />
+				</div>
+
+				<div id="f" style="display: none;">
+					<input type="text" id="num" value="0" />
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<div id="begingame" class="noshow">
+		<span id="bgnum">
+			开始投注
+		</span>
+	</div>
+	<div id="begingame1" class="noshow">
+		<span id="bgnum">
+			准备开奖
+		</span>
+	</div>
+	<!--button结束-->
+
+	<!--chongzhi-->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content mtk">
+				<div class="modal-header hhh">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<button type="button" id="myModalLabel" class="modal-title mtk-title">充值</button>
+				</div>
+				<div class="modal-body hhh">
+					<div id="">
+						<button type="button" class="as" id="qq" onclick="up('10')">10元</button>
+						<button type="button" class="mon" id="ww" onclick="up('20')">20元</button>
+						<button type="button" class="mon" id="ee" onclick="up('30')">30元</button>
+						<button type="button" class="mon" id="rr" onclick="up('50')">50元</button>
+						<button type="button" class="mon" id="tt" onclick="up('100')">100元</button>
+						<button type="button" class="mon" id="yy" onclick="up('200')">200元</button>
+					</div>
+					<div id="fff" style="display: none;">
+						<input type="text" id="upnum" value="0" />
+					</div>
+					<div id="" class="readya">
+						<div class="nih">微信支付</div>
+						<div class="nihh"><input type="radio" id="ready" /></div>
+					</div>
+				</div>
+				<div class="www">
+					充值基本秒到账，如遇网络原因充值不到账，请尝试：
+					1.重新加载游戏<br>
+					2.等待5分钟，并重新加载游戏<br>
+					3.联系客服，（提供订单ID和交易截图）
+				</div>
+				<div class="modal-footer hhh">
+					<button type="button" class="btn btn-primary qud">确认支付</button>
+				</div>
+
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal -->
+	</div>
+
+
+	<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content mtk">
+				<div class="modal-header hhh">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<button type="button" id="myModalLabel" class="modal-title mtk-title">规则</button>
+				</div>
+				<div class="modal-body hhh">
+					<div id="gonggao">
+
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal -->
+		</div>
+	</div>
+
+	<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content mtk">
+				<div class="modal-header hhh">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<button type="button" id="myModalLabel" class="modal-title mtk-title">设置</button>
+				</div>
+				<div class="modal-body hhh">
+					<div id="gonggao11">
+						<div style="width: 100%; text-align: center;">
+							<span class="swich">
+								音量
+							</span> <input type="checkbox" checked class="checkbox aaaa" value="" /><img src="" />
+						</div>
+
+						<div style="width: 100%; text-align: center; margin-top: 25px;">
+							<span class="swich">
+								音效
+							</span> <input type="checkbox" checked class="checkbox aaaa" value="" /><img src="" />
+						</div>
+
+
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal -->
+		</div>
+	</div>
+
+
+	<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content mtk">
+				<div class="modal-header hhh">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<button type="button" id="myModalLabel" class="modal-title mtk-title">公告</button>
+				</div>
+				<div class="modal-body hhh">
+					<div id="gonggao">
+
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal -->
+		</div>
+	</div>
+
+
+	<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content mtk1">
+				<div class="modal-header hhh">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<button type="button" id="myModalLabel" class="modal-title mtk-title">开奖记录</button>
+				</div>
+				<div class="modal-body hhh11">
+					<div id="gonggao1">
+						<table class="tabcc" id="tabcc">
+							<tr>
+								<td>期次</td>
+								<td>大</td>
+								<td>小</td>
+								<td>财</td>
+								<td>蕟</td>
+								<td>投注</td>
+								<td>中奖</td>
+							</tr>
+							<!--开奖记录模板！！！！-->
+							<tr>
+								<td>1</td>
+								<td></td>
+								<td></td>
+								<td><img src="img/kj.png" width="20px" /></td>
+								<td></td>
+								<td><span class="lasts">财</span></td>
+								<td><span class="lasts">20</span></td>
+							</tr>
+
+							<tr>
+								<td>2</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td><img src="img/kj.png" width="20px" /></td>
+								<td><span class="lasts">蕟</span></td>
+								<td><span class="lasts">20</span></td>
+							</tr>
+
+							<tr>
+								<td>3</td>
+								<td><img src="img/kj.png" width="20px" /></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td><span class="lasts">大</span></td>
+								<td><span class="lasts">20</span></td>
+							</tr>
+
+
+
+							<tr>
+								<td>4</td>
+								<td></td>
+								<td><img src="img/kj.png" width="20px" /></td>
+								<td></td>
+								<td></td>
+								<td><span class="lasts">小</span></td>
+								<td><span class="lasts">20</span></td>
+							</tr>
+
+
+
+						</table>
+
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal -->
+		</div>
+	</div>
+
+
+
+	<div class="modal fade" id="myModal55" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+		<div class="turnplate_box">
+			<!--<canvas id="myCanvas04" width="310px" height="310px"></canvas>-->
+			<canvas id="myCanvas" width="300px" height="300px"></canvas>
+			<canvas id="myCanvas01" width="200px" height="200px"></canvas>
+			<canvas id="myCanvas03" width="200px" height="200px"></canvas>
+			<canvas id="myCanvas02" width="150px" height="150px"></canvas>
+			<button id="tupBtn" class="turnplatw_btn"></button>
+
+			<span class="zd noshow" id="zd">大</span>
+			<span class="zx noshow" id="zx">小</span>
+			<span class="zc noshow" id="zc">财</span>
+			<span class="zc noshow" id="zf">發</span>
+			<div id="noticef" class="noticef noshow">
+				<img src="img/wb.png" width="90px" style="position: absolute;z-index: 999;left: 108px;top:-240px;" />
+				<button id="notice" class="btn zbyb" data-dismiss="modal" onclick="res()">在博一把</button><br><br>
+				&nbsp;<span class="xyq">下一期竞猜投注已经开始</span>
+			</div>
+			<div id="notices" class="noticef noshow">
+				<img src="img/wbt.png" width="90px" style="position: absolute;z-index: 999;left: 108px;top:-240px;" />
+				<div id="nnl">
+					<span>押注金额</span><br>
+					<span style="color:  rgb(255,176,23);" id="yzj"></span>
+				</div>
+
+				<div id="nnr">
+					<span>中奖金额</span><br>
+					<span style="color:  rgb(255,176,23);" id="zjj"></span>
+				</div>
+				<div id="nnnb">
+					<button id="notice" class="btn zail" data-dismiss="modal" onclick="res()">再来一局</button><br><br>
+					&nbsp;<span class="xyq">下一期竞猜投注已经开始</span>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+
+
+
+</body>
+
+</html>
+<script type="text/javascript">
+
+	/* bootstrap开关控件，初始化 */
+	$(function () {
+		/* 初始化控件 */
+		$(".checkbox").bootstrapSwitch({
+			onText: "开",      // 设置ON文本  
+			offText: "关",    // 设置OFF文本  
+			onColor: "success",// 设置ON文本颜色     (info/success/warning/danger/primary)  
+			offColor: "warning",  // 设置OFF文本颜色        (info/success/warning/danger/primary)  
+			size: "small",    // 设置控件大小,从小到大  (mini//normal/large)  
+			handleWidth: "35",//设置控件宽度
+			// 当开关状态改变时触发  
+			onSwitchChange: function (event, state) {
+				var ProductId = event.target.defaultValue;
+				if (state == true) {
+					//上线
+					updateProductStatus(ProductId, 'AOB');
+					/* alert("ON"); */
+				} else {
+					//下线
+					updateProductStatus(ProductId, 'AOC');
+					/* alert("OFF"); */
+				}
+			}
+		});
+	});
+
+</script>
+<script type="text/javascript">
+	//修改时间
+	var num;
+	num = 30;
+	// $.ajax({
+	// 	type:"get",
+	// 	url:"http://verwirrtbear.gz01.bdysite.com/car/public/admin.php/index/test",
+	// 	success:function(num1){
+	// 	num =num1;
+	// 	},
+	// 	async:false
+	// });
+	document.getElementById("djs").innerHTML = num;
+	var aaa = document.getElementById("djs").innerHTML;
+	var bbb = aaa - 2;
+	console.log(aaa);
+	var baifen = 100 / num;
+	function clock() {
+		document.getElementById("djs").innerHTML = num;
+
+		var lest = num * baifen;
+		var cc = 'width:' + lest + '%;background-color: #fdae31;'
+		//console.log(cc);
+		document.getElementById('prog').style = cc;
+		if (num) {
+			if (num > bbb) {
+				$('#begingame').removeClass('noshow');
+			} else {
+				$('#begingame').addClass('noshow');
+			}
+
+
+			if (num == 3) {
+				//console.log('12')
+				//准备开奖
+				$('#huidu').removeClass('noshow');
+				$('#levb').removeClass('levn1');
+				$('#levb').addClass('levn2');
+				$('#a').removeClass('choose');
+				$('#b').removeClass('choose');
+				$('#c').removeClass('choose');
+				$('#d').removeClass('choose');
+			}
+			if (num == 2) {
+				//开始
+
+				$('#begingame1').removeClass('noshow');
+			}
+			if (num == 1) {
+				//console.log('12')
+				//准备开奖
+
+			}
+			num--;
+		}
+		else {
+			$('#myModal1').modal('hide');
+			$('#myModal2').modal('hide');
+			$('#myModal3').modal('hide');
+			$('#myModal4').modal('hide');
+			$('#myModal').modal('hide');
+			$('#myModal55').modal({ backdrop: 'static', keyboard: false });
+		}
+		//num>0 ? num-- : $('#myModal55').modal();
+	}
+	var int = setInterval("clock()", 1000);
+
+
+	function res() {
+		window.location.reload();
+	}
+
+
+</script>
+<script type="text/javascript" src="js/robot.js">
+
+</script>

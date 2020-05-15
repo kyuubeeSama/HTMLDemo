@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/load.css"/>
+    <script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/loading.js" type="text/javascript" charset="utf-8"></script>
+    <title>匹配房间</title>  
+    <style>
+    .progress{
+		height: 15px;
+		background: #fdae31;
+		border-radius: 20px;
+		box-shadow: none;
+		margin-bottom: 30px;
+		overflow: visible;
+	}
+	.progress .progress-bar{
+		border-radius: 20px;
+		position: relative;
+		-webkit-animation: animate-positive 2s;
+		animation: animate-positive 2s;
+	}
+    </style>
+</head>
+
+<body class="bg">
+	
+<div class="bgimg1" id="bg">
+</div>	
+
+<div class="buling" id="bl">
+
+</div>
+
+<div class="" id="logo">
+<img src="img/logo.png" width="80%"/>
+</div>
+
+    <div class="progress asize progress-striped">
+        <div id="prog" class="progress-bar" role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" style="width:10%; background-color: #fff576;">
+            <span id="proglabel"></span>
+        </div>
+    </div> 
+    
+    <div class="prompt">
+    	<h4>正在匹配房间...</h4>
+    </div>
+    
+</body>
+</html>
+
+
+<script>
+function isIPhoneX(fn){
+var u = navigator.userAgent;
+var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); 
+var aa= document.getElementById('bg');
+var bb =document.getElementById('logo');
+var cc =document.getElementById('bl'); 
+if (isIOS) {        
+if (screen.height == 812 && screen.width == 375){
+                       
+aa.innerHTML= "<img src='img/bg1.png'>";
+bb.className='logo1';
+cc.innerHTML="<img src='img/b1.png'>";
+
+}else{
+	
+	aa.innerHTML= "<img src='img/bg.png'>";
+	bb.className='logo';   
+	cc.innerHTML="<img src='img/b.png'>";       
+return;
+} 
+}else{
+aa.innerHTML= "<img src='img/bg.png'>";
+	bb.className='logo';   
+	cc.innerHTML="<img src='img/b.png'>"; 
+	
+}
+}
+            
+isIPhoneX();	
+</script>
+<script>
+//window.setTimeout("window.location.href='index.html'", 5000);  
+</script>

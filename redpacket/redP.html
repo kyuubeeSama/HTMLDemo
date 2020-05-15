@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+<title>图片翻转效果</title>
+<link rel="stylesheet" href="css/animate1.css">
+ <link rel="stylesheet" href="assets/css/tck.css"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+  <!-- <link rel="stylesheet" href="assets/mui/css/mui.css"> -->
+  
+<style>
+
+.shouzhi{
+	width: 100%;
+	height: 100px;
+	background:url(img/shouzhi.png);
+	background-size: 100% 100%;
+	margin-top: 25px;
+}
+    .tishi{width:98%;height:64px;margin-left:1%;background: white;position:fixed;top:0;display: none;z-index: 1000;}
+    .tishi img{width:30px;height:30px;margin-top:20px;float:left;margin-left: 10px;}
+    .tishi .tan{float:left;margin-left:14px;margin-top:14px;font-size:14px; }
+</style>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="assets/js/react.min.js"></script>
+<script src="assets/js/react-dom.min.js"></script>
+<script src="assets/js/RedPacket.js"></script>
+<script src="assets/mui/js/mui.js"></script>
+
+<script>
+// 调整弹出框界面
+var w,h,className;
+function getSrceenWH(){
+	w = $(window).width();
+	h = $(window).height();
+	$('#dialogBg1').width(w).height(h);
+}
+
+window.onresize = function(){  
+	getSrceenWH();
+}  
+$(window).resize();  
+
+$(window).resize(function(){ 
+    $("#dialog1").css({ 
+        position: "absolute", 
+        left: ($(window).width() - $("#dialog1").outerWidth())/2, 
+        top: ($(window).height() - $("#dialog1").outerHeight())/2 
+    });        
+}); 
+$(function(){ 
+    $(window).resize(); 
+}); 
+
+$(function(){
+	getSrceenWH();
+
+	// 点开一个红包
+	// $('.well-item').click(function(){
+	// 	className = $(this).attr('class');
+	// 	$('#dialogBg1').fadeIn(300);
+	// 	$('#dialog1').removeAttr('class').addClass('animated '+className+'').fadeIn();
+	// });
+	
+	// 点击X号关闭红包按钮
+	$('.claseDialogBtn').click(function(){
+		$('#dialogBg1').fadeOut(300,function(){
+			$('#dialog1').addClass('bounceOutUp').fadeOut();
+		});
+			$('.well-item').addClass('disabled');
+	});
+});
+</script>
+<script>
+	function openRedpacket(item) {
+		$('#item').val(item);
+		className = $(this).attr('class');
+		$('#dialogBg1').fadeIn(300);
+		$('#dialog1').removeAttr('class').addClass('animated ' + className + '').fadeIn();
+	}
+	function tixian() {
+		mui.toast('满35才可以提现<br><div align="center"> 再玩几把吧</div>', { duration: 'short', type: 'div' });
+	}
+</script>
+</head>
+
+<body style="padding: 0 ;margin: 0px;">
+<input type="hidden" name="done" id="done" value="0">
+<input type="hidden" name="item" id="item" value="0">
+<p style="color: #FFF;font-size: 16px;margin-top: 15px;text-align: center;">请选择您要打开的红包</p>
+<p style="color: #e3932d;font-size: 14px;margin-top: 15px;text-align: center;">这里有九个红包试试您的手气吧~</p>
+<div class="container" style="margin-top: 35px;">
+	<div class="well">
+	<div class="well-item bounceIn" onclick="openRedpacket(1)">
+		<div class="correct" id="item1">100元</div>
+		<div class="opposite">
+			<div class="">
+				<div class="opposite-content">
+					<img src="img/redp.png" alt="" class="effect">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="well-item bounceIn" onclick="openRedpacket(2)">
+		<div class="correct" id="item2">100元</div>
+		<div class="opposite">
+			<div class="">
+				<div class="opposite-content">
+					<img src="img/redp.png" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="well-item bounceIn" onclick="openRedpacket(3)">
+		<div class="correct" id="item3">100元</div>
+		<div class="opposite">
+			<div class="">
+				<div class="opposite-content">
+					<img src="img/redp.png" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="well-item bounceIn" onclick="openRedpacket(4)">
+		<div class="correct" id="item4">100元</div>
+		<div class="opposite">
+			<div class="">
+				<div class="opposite-content">
+				<img src="img/redp.png" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+			<div class="well-item bounceIn" onclick="openRedpacket(5)">
+		<div class="correct" id="item5">100元</div>
+		<div class="opposite">
+			<div class="">
+				<div class="opposite-content">
+				<img src="img/redp.png" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="well-item bounceIn" onclick="openRedpacket(6)">
+		<div class="correct" id="item6">100元</div>
+		<div class="opposite">
+			<div class="">
+				<div class="opposite-content">
+				<img src="img/redp.png" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="well-item bounceIn" onclick="openRedpacket(7)">
+		<div class="correct" id="item7">100元</div>
+		<div class="opposite">
+			<div class="">
+				<div class="opposite-content">
+				<img src="img/redp.png" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="well-item bounceIn" onclick="openRedpacket(8)">
+		<div class="correct" id="item8">200元</div>
+		<div class="opposite">
+			<div class="">
+				<div class="opposite-content">
+				<img src="img/redp.png" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="well-item bounceIn" onclick="openRedpacket(9)">
+		<div class="correct" id="item9">100元</div>
+		<div class="opposite">
+			<div class="">
+				<div class="opposite-content">
+				<img src="img/redp.png" alt="">	
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="shouzhi" onclick="demo()"></div>
+<a href="#" title="" class="fanhui" style="margin-top:20px;">
+	再来一局
+</a>
+<a href="#" title="" class="fanhui2" style="margin-top: 20px;">
+	返回首页
+</a>
+<div id="dialogBg1" style="z-index:10;"></div>
+		<div id="dialog1" class="animated" style="background-color:#BD503A;z-index: 11;">
+			<div class="dialogTop" style="border-bottom:0;">
+				<a href="javascript:;" class="claseDialogBtn" style="color: #FFF;font-size: 18px;display: none;">x</a>
+			</div>
+			<div id='redpacket'></div>
+		</div>
+</div>
+<div class="tishi">
+	<img src="img/pay.jpg" />
+	<div class="tan">
+		您获得的价值<span style="color:#A5A03E" id="money">18</span>红包已到账。<br />请进入我的账户查看
+	</div>
+</div>
+</body>
+    <script type="text/javascript">
+        ReactDOM.render(React.createElement(ReadPacket, null), document.getElementById('redpacket'));
+    </script>
+</html>

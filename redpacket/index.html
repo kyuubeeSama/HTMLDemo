@@ -1,0 +1,377 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+<title>图片翻转效果</title>
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="assets/font/iconfont.css"/>
+<link rel="stylesheet" href="assets/css/tck.css"/>
+<link rel="stylesheet" href="assets/mui/css/mui.css"/>
+<style>
+
+
+</style>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="assets/mui/js/mui.js"></script>
+<script>
+
+	var $animate = $('#animate');
+	var $opposite = $('#opposite');
+	$(".wrap").hover(function(){
+		$animate.removeClass();
+		$opposite.removeClass();
+		$animate.addClass("test");
+		$opposite.addClass('test2');
+	},function(){
+		$animate.removeClass();
+		$opposite.removeClass();
+		$animate.addClass("test2");
+		$opposite.addClass('test');
+	});
+
+
+function myfun(){
+	    $(".well-item").find(".correct").children().removeClass();
+		$(".well-item").find(".opposite").children().removeClass();
+		$(".well-item").find(".correct").children().addClass("test");
+		$(".well-item").find(".opposite").children().addClass('test2');
+}
+
+function myfun3(){
+	$(".well-item").click(function(){
+		$(this).find(".correct").children().removeClass();
+		$(this).find(".opposite").children().removeClass();
+		$(this).find(".correct").children().addClass("test");
+		$(this).find(".opposite").children().addClass('test2');
+	},function(){
+		$(this).find(".correct").children().removeClass();
+		$(this).find(".opposite").children().removeClass();
+		$(this).find(".correct").children().addClass("test2");
+		$(this).find(".opposite").children().addClass('test');
+	});
+}
+
+	
+
+
+// 修改
+function myfun2(value){
+	$(".well .well-item img").click(function(){
+	     mui.toast(value,{ duration:'short', type:'div'}) ;
+	    myfun3();
+    });
+}
+
+function myfun1(){
+		$(".select-m .money").click(function(){
+        $(this).addClass("m-se").siblings().removeClass("m-se");
+    });
+}
+	 
+
+
+window.onload=function(){
+
+myfun();
+myfun1();
+// 修改
+ myfun2('请完成支付在拆红包');
+}
+
+</script>
+<!-- 修改 -->
+<script>
+	function checkvalue(){
+		var code = $('#code').val();
+		alert(code);
+		return false;
+	}
+</script>
+</head>
+
+<body style="padding: 0 10px;">
+
+<p style="color: #e2ba83;font-size: 14px;margin-top: 15px;width: 79%;text-align: center;">支付10元，系统生成9个红包，价值1-200，选一个拆开，最高价值 <span style="color: #f5dc1a;">200.00</span>。</p>
+<div class="lhb demo1 flipInX">
+	领红包
+</div>
+<div id="dialogBg1" class="close1"></div>
+        <div id="dialog1" class="animated" style="background-color: #fff;">
+            <img class="dialogIco" width="50" height="50" src="img/ico.png" alt="" />
+            <div class="dialogTop" style="background-color: #fff;border-bottom: 0;">
+                <a href="javascript:;" class="claseDialogBtn"><span class="iconfont icon-close" style="font-size: 20px;"></span></a>
+            </div>  
+			<div class="dialogB" style="background-color: #fff;padding: 0">
+				<!-- 修改 -->
+				<form action="" method="post" id="editForm" style="margin-top: 20px;" onsubmit="return checkvalue();">
+					<ul class="editInfos">
+						<li><label><span style="margin-bottom: 5px;color: chocolate;">请输入邀请码：</span><input type="text" name="code" id="code" required value="" class="ipt" /></label></li>
+						<li><input type="submit" value="提交" class="submitBtn" /></li>
+					</ul>
+				</form>
+            </div>
+</div>
+<div class="container">
+	<div class="well">
+	<div class="well-item">
+		<div class="correct">100元</div>
+		<div class="opposite">
+			<div class="">
+				<div class="opposite-content">
+					<img src="img/redp.png" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="well-item">
+		<div class="correct">100元</div>
+		<div class="opposite">
+			<div class="">
+				<div class="opposite-content">
+					<img src="img/redp.png" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="well-item">
+		<div class="correct">100元</div>
+		<div class="opposite">
+			<div class="">
+				<div class="opposite-content">
+					<img src="img/redp.png" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="well-item">
+		<div class="correct">100元</div>
+		<div class="opposite">
+			<div class="">
+				<div class="opposite-content">
+				<img src="img/redp.png" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+			<div class="well-item">
+		<div class="correct">100元</div>
+		<div class="opposite">
+			<div class="">
+				<div class="opposite-content">
+				<img src="img/redp.png" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="well-item">
+		<div class="correct">100元</div>
+		<div class="opposite">
+			<div class="">
+				<div class="opposite-content">
+				<img src="img/redp.png" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="well-item">
+		<div class="correct">100元</div>
+		<div class="opposite">
+			<div class="">
+				<div class="opposite-content">
+				<img src="img/redp.png" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="well-item">
+		<div class="correct">200元</div>
+		<div class="opposite">
+			<div class="">
+				<div class="opposite-content">
+				<img src="img/redp.png" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="well-item">
+		<div class="correct">100元</div>
+		<div class="opposite">
+			<div class="">
+				<div class="opposite-content">
+				<img src="img/redp.png" alt="">	
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- <div class="payment">
+	<p style="text-align: center;color: #fff;font-size: 18px;">
+	<svg class="icon" aria-hidden="true" style="font-size: 24px;">
+         <use xlink:href="#icon-icon_" ></use>
+        </svg>&ensp;选择付款金额</p>
+    <div class="select-m clearfix">
+    	 <div class="money m-se">
+    	 	10元
+    	 </div>
+    	 <div class="money">
+    	 	<span class="tuijian"></span>
+    	 	20元
+    	 </div>
+    	 <div class="money">
+    	 	30元
+    	 </div>
+    </div>
+</div> -->
+</div>
+ <p style="color: #ea9f7d;font-size: 14px;margin-top: 15px;text-align: center;    padding: 0 20px;">支付<span style="color: #fff;">10</span>元将会拆<span style="color: #fff;">200.00</span>以内的红包，支付金额越大，拆到的红包价值越大。</p>
+ <div class="paybox">
+   <a href="javascript:;" class="pay-red">支付马上拆红包</a>
+ </div>	
+  <p style="color: #ea9f7d;font-size: 12px;margin-top: 20px;text-align: center;">当前账户可提余额：¥<span>1000.00</span></p>
+ <div class="notice" style="margin-top: 15px;">
+ 	 <div class="roll">
+ 	 	<marquee direction="left" style="color:#f5e676;">
+        滚动公告！！！！！！！！！！！
+        </marquee>
+ 	 </div>
+ </div>	
+
+ <div class="notice-m">
+ 	<div class="Top_Record">
+
+  <div class="topRec_List">
+     <div class="maquee">
+        <ul>
+            <li>
+                <div class="header">
+ 	 			    <img src="img/header.jpg" alt="">
+ 	 		    </div>
+ 	 		    <div class="headerTxt">
+ 	 			  <p>李小龙<p>
+ 	 			  <p style="margin-bottom:5px;">拆开了红包，赢得 <span style="color:#f5e676;">100.00</span>元</p>
+ 	 		    </div>
+ 	 		   
+            </li> 
+              <li>
+                <div class="header">
+ 	 			    <img src="img/header.jpg" alt="">
+ 	 		    </div>
+ 	 		    <div class="headerTxt">
+ 	 			  <p>liu<p>
+ 	 			  <p style="margin-bottom:5px;">拆开了红包，赢得 <span style="color:#f5e676;">1000.00</span>元</p>
+ 	 		    </div>
+ 	 		    
+            </li> 
+              <li>
+                <div class="header">
+ 	 			    <img src="img/header.jpg" alt="">
+ 	 		    </div>
+ 	 		    <div class="headerTxt">
+ 	 			  <p>ming<p>
+ 	 			  <p style="margin-bottom:5px;">拆开了红包，赢得 <span style="color:#f5e676;">120.00</span>元</p>
+ 	 		    </div>
+ 	 		   
+            </li> 
+             <li>
+                <div class="header">
+ 	 			    <img src="img/header.jpg" alt="">
+ 	 		    </div>
+ 	 		    <div class="headerTxt">
+ 	 			  <p>lee<p>
+ 	 			  <p style="margin-bottom:5px;">拆开了红包，赢得 <span style="color:#f5e676;">800.00</span>元</p>
+ 	 		    </div>
+ 	 		    
+            </li> 
+        </ul>
+    </div>
+
+</div>
+
+</div> 
+ <a href="javascript:;" class="ruler">规则</a>
+ 	 		    <a href="javascript:;" class="ruler">代理</a>
+ 	 		
+ </div>
+
+</body>
+<script src="assets/font/iconfont.js"></script>
+<script type="text/javascript"> 
+
+	  function autoScroll(obj){  
+
+			$(obj).find("ul").animate({  
+				marginTop : "-39px"  
+			},500,function(){  
+				$(this).css({marginTop : "0px"}).find("li:first").appendTo(this);  
+			})  
+		}  
+
+		$(function(){  
+			setInterval('autoScroll(".maquee")',100000);
+			setInterval('autoScroll(".apple")',2000);
+		}) 
+
+		
+
+</script> 
+<script type="text/javascript">
+var w,h,className;
+function getSrceenWH(){
+    w = $(window).width();
+    h = $(window).height();
+    $('#dialogBg1').width(w).height(h);
+}
+
+window.onresize = function(){  
+    getSrceenWH();
+}  
+$(window).resize();  
+
+$(function(){
+    getSrceenWH();
+    
+    //ÏÔÊ¾µ¯¿ò
+    $('.demo1').click(function(){
+        className = $(this).attr('class');
+        $('#dialogBg1').fadeIn(300);
+        $('#dialog1').removeAttr('class').addClass('animated '+className+'').fadeIn();
+    });
+
+    
+    //¹Ø±Õµ¯´°
+    $('.claseDialogBtn').click(function(){
+        $('.close1').fadeOut(300,function(){
+            $('#dialog1').addClass('bounceOutUp').fadeOut();
+            $('#dialog2').addClass('bounceOutUp').fadeOut();
+            $('#dialog3').addClass('bounceOutUp').fadeOut();
+            $('#dialog4').addClass('bounceOutUp').fadeOut();
+            $('#dialog5').addClass('bounceOutUp').fadeOut();
+            $('#dialog6').addClass('bounceOutUp').fadeOut();
+            $('#dialog7').addClass('bounceOutUp').fadeOut();
+            $('#dialog8').addClass('bounceOutUp').fadeOut();
+            $('#dialog9').addClass('bounceOutUp').fadeOut();
+        });
+    });
+});
+
+
+$(window).resize(function(){ 
+    $("#dialog1").css({ 
+        position: "absolute", 
+        left: ($(window).width() - $("#dialog1").outerWidth())/2, 
+        top: ($(window).height() - $("#dialog1").outerHeight())/2 
+    });        
+}); 
+$(function(){ 
+    $(window).resize(); 
+}); 
+</script>
+</html>

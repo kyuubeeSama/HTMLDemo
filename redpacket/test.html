@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="assets/mui/js/mui.js"></script>
+    <link rel="stylesheet" href="assets/mui/css/mui.css">
+    <style type="text/css">
+        .btn{
+            width: 40%;
+            margin-left: 30%;
+            text-align: center;
+            height: 30px;
+            background-color: red;
+            margin-top: 200px;
+        }
+    </style>
+    <script>
+        function loading() {
+            alert('hello');
+            mui.showLoading("正在加载..", "div");
+        }
+    </script>
+</head>
+<body>
+    <div class="btn" onclick="loading()">
+        点击按钮
+    </div>
+</body>
+</html>

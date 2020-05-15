@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0"/> 
+    <title></title>
+        <link rel="stylesheet" href="css/common.css"/>
+        <link rel="stylesheet" href="assets/font/iconfont.css"/>
+        <link rel="stylesheet" href="assets/css/tck.css"/>
+        <script type="text/javascript">
+            function bangdan(type) {
+                if (type == 1) {
+                    // 总榜单
+                    $("#btn1").css("color", "#cc4d4d");
+                    $("#btn2").css("color", "black");
+                    // $('#table1').css("display","inline-block");
+                    // $("#table2").css("display","none");
+                    $('#table1').show();
+                    $('#table2').hide();
+                } else {
+                    // 今日榜单
+                    $("#btn2").css("color", "#cc4d4d");
+                    $("#btn1").css("color", "black");
+                    $('#table2').show();
+                    $('#table1').hide();
+                    // $('#table2').css("display", "inline-block");
+                    // $("#table1").css("display", "none");
+                }
+            }
+            function copy_fun() {//参数copy是要复制的文本内容
+                var copy = 'http://www.baidu.com';
+                    mui.plusReady(function () {
+                        //判断是安卓还是ios
+                        if (mui.os.ios) {
+                            //ios
+                            var UIPasteboard = plus.ios.importClass("UIPasteboard");
+                            var generalPasteboard = UIPasteboard.generalPasteboard();
+                            //设置/获取文本内容:
+                            generalPasteboard.plusCallMethod({
+                                setValue: copy,
+                                forPasteboardType: "public.utf8-plain-text"
+                            });
+                            generalPasteboard.plusCallMethod({
+                                valueForPasteboardType: "public.utf8-plain-text"
+                            });
+                            mui.toast("已成功复制到剪贴板");
+                        } else {
+                            //安卓
+                            var context = plus.android.importClass("android.content.Context");
+                            var main = plus.android.runtimeMainActivity();
+                            var clip = main.getSystemService(context.CLIPBOARD_SERVICE);
+                            plus.android.invoke(clip, "setText", copy);
+                            mui.toast("已成功复制到剪贴板");
+                        }
+                    });
+                }
+        </script>
+</head>
+<body>
+<div class="kx_Container" style="background-color: #f7f7f7;">
+	<!-- 顶部 开始 -->
+    <header class="kx_topBar">
+        <a class="btn_left" href="javascript:history.back();"><span style="line-height: 44px;">返回主页</span></a>
+        <h3 style="color: #333;">代理中心</h3>
+    </header>
+    <!-- 顶部结束 -->
+    <!-- 主体内容 开始 -->
+    <div class="kx_Content" style="padding-bottom: 0;">
+    	<div class="kx_wrapper">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                <!-- 显示内容 开始 -->
+                    <!-- 登录 方式 -->
+                    <div class="kx_modify">
+                        <div class="wxqqlink">
+                            <div class="no_login">
+                                <a href="#" id="changeHead">
+                                  <img class="mui-media-object mui-pull-left head-img" id="head-img" src="img/personal-login.png" style="border-radius: 50%;">
+                                </a>
+                                <p style="font-size: 14px;color: #da6807f5;">用户1542078237</p>
+                                
+                            </div>
+                        </div>
+                        <div class="gameGG clearfix">
+                            <div class="gameID" style="float: left;">
+                                <p style="font-size: 14px;color:#928080;text-align: left;">ID:&ensp;<span style="color: #cc4d4d;">89757</span></p>
+                                <p style="font-size: 14px;color: #928080;text-align: left;"> 上级ID：<span style="color: #cc4d4d;">89757</span></p>
+                            </div>
+                            <div style="float: right;">
+                                <p style="font-size: 14px;color: #928080;">余额：<span style="color: #cc4d4d;">100</span></p>
+                                <p style="font-size: 14px;color: #928080;text-align: left;">佣金：<span style="color: #cc4d4d;">100</span></p>
+                            </div>
+                        </div>
+                        <div style="margin-left:10%;height:16px;width: 80%;">http://www.baidu.com<a href="#" onclick="copy_fun()">复制</a></div>
+                    </div>
+                    <!-- 登录 方式 结束 -->
+                    <div class="nineG">
+                        <ul class='mui-table-view mui-grid-view mui-grid-9'>
+<li class='mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3'>
+<a href='#' class="demo1 flipInX">
+<span class='iconfont icon-daili'></span>
+<div class='mui-media-body'>代理公告</div>
+</a>
+<div id="dialogBg1" class="close1"></div>
+        <div id="dialog1" class="animated">
+            <img class="dialogIco" width="50" height="50" src="img/ico.png" alt="" />
+            <div class="dialogTop">
+                <a href="javascript:;" class="claseDialogBtn"><span class="iconfont icon-close" style="font-size: 20px;"></span></a>
+            </div>  
+            <div class="dialogB">
+                sadfasdfasdfasdfasdf <br>   
+    adfasdfasdfasdfasdf <br>    
+    adfasdfasdfasdfasdf <br>    
+    adfasdfasdfasdfasdf <br>    
+    adfasdfasdfasdfasdf <br>    
+
+    adfasdfasdfasdfasdf <br>    
+    adfasdfasdfasdfasdf <br>    
+    adfasdfasdfasdfasdf <br>    
+    adfasdfasdfasdfasdf <br>    
+    adfasdfasdfasdfasdf <br>    
+    adfasdfasdfasdfasdf <br>    
+    adfasdfasdfasdfasdf <br>    
+    adfasdfasdfasdfasdf <br>    
+    adfasdfasdfasdfasdf <br>
+            </div>
+</div>
+</li>
+<li class='mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3'>
+<a href='#' class="demo2 flipInX">
+<span class='iconfont icon-kefu'></span>
+<div class='mui-media-body'>在线客服</div>
+</a>
+<div id="dialogBg2" class="close1"></div>
+        <div id="dialog2" class="animated">
+            <img class="dialogIco" width="50" height="50" src="img/ico.png" alt="" />
+            <div class="dialogTop">
+                <a href="javascript:;" class="claseDialogBtn"><span class="iconfont icon-close" style="font-size: 20px;"></span></a>
+            </div>
+            <div class="dialogB">
+           
+            </div>
+</li>
+<li class='mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3'>
+<a href='#' class="demo3 flipInX">
+<span class='iconfont icon-zhuanqian'></span>
+<div class='mui-media-body'>如何赚钱</div>
+</a>
+<div id="dialogBg3" class="close1"></div>
+        <div id="dialog3" class="animated">
+            <img class="dialogIco" width="50" height="50" src="img/ico.png" alt="" />
+            <div class="dialogTop">
+                <a href="javascript:;" class="claseDialogBtn"><span class="iconfont icon-close" style="font-size: 20px;"></span></a>
+            </div>
+         <div class="dialogB">
+             <img src="img/pro1.jpg" alt="">
+            <p>长按识别二维码</p>
+        </div>
+</div>
+</li>
+<li class='mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3'>
+<a href='#' class="demo4 flipInX">
+<span class='iconfont icon-wodetuandui'></span>
+<div class='mui-media-body'>我的团队</div>
+</a>
+<div id="dialogBg4" class="close1"></div>
+        <div id="dialog4" class="animated">
+            <img class="dialogIco" width="50" height="50" src="img/ico.png" alt="" />
+            <div class="dialogTop">
+                <a href="javascript:;" class="claseDialogBtn"><span class="iconfont icon-close" style="font-size: 20px;"></span></a>
+            </div>
+            <div class="dialogB">
+                sadfasdfasdfasdfasdf <br>   
+    adfasdfasdfasdfasdf <br>    
+    adfasdfasdfasdfasdf <br>    
+    adfasdfasdfasdfasdf <br>    
+    adfasdfasdfasdfasdf <br>    
+
+    adfasdfasdfasdfasdf <br>    
+    adfasdfasdfasdfasdf <br>    
+    adfasdfasdfasdfasdf <br>    
+
+    adfasdfasdfasdfasdf <br>    
+    adfasdfasdfasdfasdf <br>    
+    adfasdfasdfasdfasdf <br>
+            </div> 
+
+
+</div>
+</li>
+<li class='mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3'>
+<a href='#' class="demo5 flipInX">
+<span class='iconfont icon-SVG_erweima'></span>
+<div class='mui-media-body'>推广二维码</div>
+</a>
+<div id="dialogBg5" class="close1"></div>
+        <div id="dialog5" class="animated">
+            <img class="dialogIco" width="50" height="50" src="img/ico.png" alt="" />
+            <div class="dialogTop">
+                <a href="javascript:;" class="claseDialogBtn"><span class="iconfont icon-close" style="font-size: 20px;"></span></a>
+            </div>
+      <div class="dialogB">
+             <img src="img/hello.jpg" alt="">
+            <p>长按识别二维码</p>
+        </div>
+
+</div>
+</li>
+<li class='mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3'>
+<a href='#' class="demo6 flipInX">
+<span class='iconfont icon-youxijilu'></span>
+<div class='mui-media-body'>游戏记录</div>
+</a>
+<div id="dialogBg6" class="close1"></div>
+        <div id="dialog6" class="animated">
+            <img class="dialogIco" width="50" height="50" src="img/ico.png" alt="" />
+            <div class="dialogTop">
+                <a href="javascript:;" class="claseDialogBtn"><span class="iconfont icon-close" style="font-size: 20px;"></span></a>
+            </div> 
+            <div class="dialogB">
+<table class="zebra">  
+    <thead>  
+    <tr>  
+    <th>游戏时间</th>  
+    <th>金额</th>  
+    <th>奖金</th>  
+      
+    </tr>  
+    </thead>  
+    <tfoot>  
+    <tr>  
+    <td> </td>  
+    <td></td>  
+    <td></td>  
+    </tr>  
+    </tfoot>  
+    <tr>  
+    <td>201.8.5.6</td>  
+    <td>10</td>  
+    <td>888</td>  
+    </tr>  
+    <tr>  
+    <td>201.8.5.6</td>  
+    <td>10</td>  
+    <td>199</td>  
+    </tr> 
+        <tr>  
+    <td>201.8.5.6</td>  
+    <td>10</td>  
+    <td>288</td>  
+    </tr> 
+        <tr>  
+    <td>201.8.5.6</td>  
+    <td>10</td>  
+    <td>88</td>  
+    </tr> 
+         <tr>  
+    <td>201.8.5.6</td>  
+    <td>10</td>  
+    <td>88</td>  
+    </tr> 
+         <tr>  
+    <td>201.8.5.6</td>  
+    <td>10</td>  
+    <td>88</td>  
+    </tr>   
+    </table> 
+            </div> 
+
+</div>
+</li>
+<li class='mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3'>
+<a href='#' class="demo7 flipInX">
+<span class='iconfont icon-tixianjilu'></span>
+<div class='mui-media-body'>提现记录</div>
+</a>
+<div id="dialogBg7" class="close1"></div>
+        <div id="dialog7" class="animated">
+            <img class="dialogIco" width="50" height="50" src="img/ico.png" alt="" />
+            <div class="dialogTop">
+                <a href="javascript:;" class="claseDialogBtn"><span class="iconfont icon-close" style="font-size: 20px;"></span></a>
+            </div> 
+            <div class="dialogB">
+<table class="zebra">  
+    <thead>  
+    <tr>  
+    <th>时间</th> 
+    <th>类型</th> 
+    <th>金额</th>  
+    </tr>  
+    </thead>  
+    <tfoot>  
+    <tr>  
+    <td></td>  
+    <td></td>
+    <td></td>    
+    </tr>  
+    </tfoot>  
+    <tr>  
+    <td>201-8-30 12:59:59</td> 
+    <td>佣金</td>   
+    <td>888</td>  
+    </tr>  
+<tr>
+    <td>201-8-30 12:59:59</td>
+    <td>佣金</td>
+    <td>888</td>
+</tr>
+<tr>
+    <td>201-8-30 12:59:59</td>
+    <td>佣金</td>
+    <td>888</td>
+</tr>
+<tr>
+    <td>201-8-30 12:59:59</td>
+    <td>佣金</td>
+    <td>888</td>
+</tr>
+<tr>
+    <td>201-8-30 12:59:59</td>
+    <td>佣金</td>
+    <td>888</td>
+</tr>
+<tr>
+    <td>201-8-30 12:59:59</td>
+    <td>佣金</td>
+    <td>888</td>
+</tr>
+<tr>
+    <td>201-8-30 12:59:59</td>
+    <td>佣金</td>
+    <td>888</td>
+</tr>
+<tr>
+    <td>201-8-30 12:59:59</td>
+    <td>佣金</td>
+    <td>888</td>
+</tr>
+<tr>
+    <td>201-8-30 12:59:59</td>
+    <td>佣金</td>
+    <td>888</td>
+</tr>
+<tr>
+    <td>201-8-30 12:59:59</td>
+    <td>佣金</td>
+    <td>888</td>
+</tr>
+    </table> 
+            </div> 
+
+</div>
+</li>
+
+<li class='mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3'>
+    <a href='#' class="demo8 flipInX">
+        <span class='iconfont icon-yongjin'></span>
+        <div class='mui-media-body'>佣金记录</div>
+    </a>
+    <div id="dialogBg8" class="close1"></div>
+    <div id="dialog8" class="animated">
+        <img class="dialogIco" width="50" height="50" src="img/ico.png" alt="" />
+        <div class="dialogTop">
+            <a href="javascript:;" class="claseDialogBtn"><span class="iconfont icon-close" style="font-size: 20px;"></span></a>
+        </div>
+        <div class="dialogB">
+            <table class="zebra">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>等级</th>
+                        <th>金额</th>
+                        <th>佣金</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+                <tr>
+                    <td>lee</td>
+                    <td>88</td>
+                    <td>88</td>
+                    <td>88</td>
+                </tr>
+                <tr>
+                    <td>lee</td>
+                    <td>88</td>
+                    <td>88</td>
+                    <td>88</td>
+                </tr>
+                <tr>
+                    <td>lee</td>
+                    <td>88</td>
+                    <td>88</td>
+                    <td>88</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</li>
+<!-- <li class='mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3'>
+    <a href='#' class="demo8 flipInX">
+        <span class='iconfont icon-yongjin'></span>
+        <div class='mui-media-body'>佣金排行榜</div>
+    </a>
+    <div id="dialogBg8" class="close1"></div>
+    <div id="dialog8" class="animated">
+        <img class="dialogIco" width="50" height="50" src="img/ico.png" alt="" />
+        <div class="dialogTop">
+            <a href="javascript:;" class="claseDialogBtn"><span class="iconfont icon-close" style="font-size: 20px;"></span></a>
+        </div>
+        <div class="dialogB" style="height:350px;">
+            <div style="width:50%; float: left;height: 30px;color: #cc4d4d;" id="btn1" onclick="bangdan(1)">总榜单</div>
+            <div style="width:50%; float: left; height: 30px;color: black;" id="btn2" onclick="bangdan(2)">今日榜单</div>
+            <table class="zebra" id="table1">
+                <thead>
+                    <tr>
+                        <th>名次</th>
+                        <th>用户</th>
+                        <th>佣金</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+                <tr>
+                    <td>No.1</td>
+                    <td>2349</td>
+                    <td>￥88</td>
+                </tr>
+                <tr>
+                    <td>No.1</td>
+                    <td>2349</td>
+                    <td>￥88</td>
+                </tr>
+                <tr>
+                    <td>No.1</td>
+                    <td>2349</td>
+                    <td>￥88</td>
+                </tr>
+                <tr>
+                    <td>No.1</td>
+                    <td>2349</td>
+                    <td>￥88</td>
+                </tr>
+                <tr>
+                    <td>No.1</td>
+                    <td>2349</td>
+                    <td>￥88</td>
+                </tr>
+                <tr>
+                    <td>No.1</td>
+                    <td>2349</td>
+                    <td>￥88</td>
+                </tr>
+                <tr>
+                    <td>No.1</td>
+                    <td>2349</td>
+                    <td>￥88</td>
+                </tr>
+                <tr>
+                    <td>No.1</td>
+                    <td>2349</td>
+                    <td>￥88</td>
+                </tr>
+                <tr>
+                    <td>No.1</td>
+                    <td>2349</td>
+                    <td>￥88</td>
+                </tr>
+                <tr>
+                    <td>No.1</td>
+                    <td>2349</td>
+                    <td>￥88</td>
+                </tr>
+            </table>
+            <table class="zebra" id="table2" style="display:none;">
+                <thead>
+                    <tr>
+                        <th>名次</th>
+                        <th>用户</th>
+                        <th>佣金</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+                <tr>
+                    <td>No.1</td>
+                    <td>2348</td>
+                    <td>￥88</td>
+                </tr>
+                <tr>
+                    <td>No.1</td>
+                    <td>2348</td>
+                    <td>￥88</td>
+                </tr>
+                <tr>
+                    <td>No.1</td>
+                    <td>2348</td>
+                    <td>￥88</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+</li> -->
+<li class='mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3'>
+<a href='#' class="demo9 flipInX">
+<span class='iconfont icon-yongjintixian'></span>
+<div class='mui-media-body'>佣金提现</div>
+</a>
+<div id="dialogBg9" class="close1"></div>
+        <div id="dialog9" class="animated">
+            <img class="dialogIco" width="50" height="50" src="img/ico.png" alt="" />
+            <div class="dialogTop">
+                <a href="javascript:;" class="claseDialogBtn"><span class="iconfont icon-close" style="font-size: 20px;"></span></a>
+            </div>
+            <div class="dialogB">
+                <form action="" method="post" id="editForm" style="margin-top: 20px;">
+                <ul class="editInfos">
+                    <li><label><span style="margin-bottom: 5px;">提现金额：</span><input type="text" name="" required value="" class="ipt" /></label></li>
+                </ul>
+                <input type="submit" value="确认提现" class="submitBtn" />
+                
+            </form>
+            </div> 
+</div>
+</li>
+</ul>
+
+                    </div>
+                <!-- 显示内容 结束 -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 主题内容 结束 -->
+</div>
+</body>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="assets/mui/js/mui.js"></script>
+<script>
+    mui('.mui-scroll-wrapper').scroll({
+    indicators:false
+});
+/*ÂÖ²¥Í¼µÄ³õÊ¼»¯*/
+mui('.mui-slider').slider({
+    interval:4000
+});
+</script>
+<script type="text/javascript">
+var w,h,className;
+function getSrceenWH(){
+    w = $(window).width();
+    h = $(window).height();
+    $('#dialogBg1,#dialogBg2,#dialogBg3,#dialogBg4,#dialogBg5,#dialogBg6,#dialogBg7,#dialogBg8,#dialogBg9').width(w).height(h);
+}
+
+window.onresize = function(){  
+    getSrceenWH();
+}  
+$(window).resize();  
+
+$(function(){
+    getSrceenWH();
+    
+    //ÏÔÊ¾µ¯¿ò
+    $('.demo1').click(function(){
+        className = $(this).attr('class');
+        $('#dialogBg1').fadeIn(300);
+        $('#dialog1').removeAttr('class').addClass('animated '+className+'').fadeIn();
+    });
+        $('.demo2').click(function(){
+        className = $(this).attr('class');
+        $('#dialogBg2').fadeIn(300);
+        $('#dialog2').removeAttr('class').addClass('animated '+className+'').fadeIn();
+    });
+        $('.demo3').click(function(){
+        className = $(this).attr('class');
+        $('#dialogBg3').fadeIn(300);
+        $('#dialog3').removeAttr('class').addClass('animated '+className+'').fadeIn();
+    });
+        $('.demo4').click(function(){
+        className = $(this).attr('class');
+        $('#dialogBg4').fadeIn(300);
+        $('#dialog4').removeAttr('class').addClass('animated '+className+'').fadeIn();
+    });
+         $('.demo5').click(function(){
+        className = $(this).attr('class');
+        $('#dialogBg5').fadeIn(300);
+        $('#dialog5').removeAttr('class').addClass('animated '+className+'').fadeIn();
+    });
+        $('.demo6').click(function(){
+        className = $(this).attr('class');
+        $('#dialogBg6').fadeIn(300);
+        $('#dialog6').removeAttr('class').addClass('animated '+className+'').fadeIn();
+    });
+        $('.demo7').click(function(){
+        className = $(this).attr('class');
+        $('#dialogBg7').fadeIn(300);
+        $('#dialog7').removeAttr('class').addClass('animated '+className+'').fadeIn();
+    });
+         $('.demo8').click(function(){
+        className = $(this).attr('class');
+        $('#dialogBg8').fadeIn(300);
+        $('#dialog8').removeAttr('class').addClass('animated '+className+'').fadeIn();
+    });
+        $('.demo9').click(function(){
+        className = $(this).attr('class');
+        $('#dialogBg9').fadeIn(300);
+        $('#dialog9').removeAttr('class').addClass('animated '+className+'').fadeIn();
+    });
+    
+    //¹Ø±Õµ¯´°
+    $('.claseDialogBtn').click(function(){
+        $('.close1').fadeOut(300,function(){
+            $('#dialog1').addClass('bounceOutUp').fadeOut();
+            $('#dialog2').addClass('bounceOutUp').fadeOut();
+            $('#dialog3').addClass('bounceOutUp').fadeOut();
+            $('#dialog4').addClass('bounceOutUp').fadeOut();
+            $('#dialog5').addClass('bounceOutUp').fadeOut();
+            $('#dialog6').addClass('bounceOutUp').fadeOut();
+            $('#dialog7').addClass('bounceOutUp').fadeOut();
+            $('#dialog8').addClass('bounceOutUp').fadeOut();
+            $('#dialog9').addClass('bounceOutUp').fadeOut();
+        });
+    });
+});
+
+
+$(window).resize(function(){ 
+    $("#dialog1, #dialog2, #dialog3, #dialog4, #dialog5, #dialog6, #dialog7, #dialog8, #dialog9").css({ 
+        position: "absolute", 
+        left: ($(window).width() - $("#dialog1, #dialog2, #dialog3, #dialog4, #dialog5, #dialog6, #dialog7, #dialog8, #dialog9").outerWidth())/2, 
+        top: ($(window).height() - $("#dialog1, #dialog2, #dialog3, #dialog4, #dialog5, #dialog6, #dialog7, #dialog8, #dialog9").outerHeight())/5 
+    });        
+}); 
+$(function(){ 
+    $(window).resize(); 
+}); 
+</script>
+
+
+</html>

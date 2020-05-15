@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>wangEditor demo</title>
+</head>
+
+<body>
+	<form action="" method="post">
+		<div id="question">
+		</div>
+		<input type="hidden" name="question" id="questionvalue" value="" />
+		<div id="answer1">
+		</div>
+		<div id="answer2">
+		</div>
+		<button type="button" id="button"> 提交</button>
+		<!-- <input type="submit" value="提交"/> -->
+	</form>
+
+	<!-- 注意， 只需要引用 JS，无需引用任何 CSS ！！！-->
+	<script type="text/javascript" src="https://unpkg.com/wangeditor@3.1.1/release/wangEditor.min.js"></script>
+	<script type="text/javascript">
+		var E = window.wangEditor
+		var questionEditor = new E('#question')
+		questionEditor.create()
+
+		var answer1editor = new E('#answer1')
+		answer1editor.create()
+
+		var answer2editor = new E('#answer2')
+		answer2editor.create()
+		document.getElementById('button').addEventListener('click', function () {
+			// 读取 html
+			var questionvalue = questionEditor.txt.html();
+			document.getElementById('questionvalue').value = questionvalue;
+
+			console.log('提交');
+		}, false)
+	</script>
+
+	<!-- <script type="text/javascript">
+		function checkdata() {
+			var E = window.wangEditor;
+			var questionEditor = new E('#question');
+			var questionvalue = questionEditor.text.html();
+			document.getElementById('questionvalue').value = questionvalue;
+			console.log('提交');
+			return false;
+		}
+	</script> -->
+
+</body>
+
+</html>
+<!-- 测试地址 -->
+<!-- https://www.cnblogs.com/yaoyao1556/p/10622683.html -->

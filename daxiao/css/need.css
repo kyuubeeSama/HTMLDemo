@@ -1,0 +1,28 @@
+html,body {
+padding: 0;
+margin: 0;
+}
+.zd{
+	font-weight: bold;
+	color: blue;
+	font-size: 22px;
+	position: absolute;
+	z-index: 999;
+	left: 137px;
+	top:21px;
+	-webkit-text-fill-color: white;/*文字的填充色*/
+	-webkit-text-stroke: 2px dodgerblue;/*描边的像素，也就是粗细，这里指定是2像素的黑色边框*/
+}
+.noshow{
+	display: none;
+}
+#itop{
+	width: 100%;
+}
+.menu{
+	text-align: center;
+	width: 19%;
+	float: left;	
+	margin-left: 1%;
+	margin-top: 1%;
+}
