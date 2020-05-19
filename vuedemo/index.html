@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 <head>
@@ -11,8 +11,18 @@
 	<div id="app">
 		{{message}}
 	</div>
-	<div id="list">
+	<ul id="list">
 		<li v-for="(item, index) in array" :key="index">{{item}}</li>
+	</ul>
+	<div id="one">
+		<h2 v-once>{{data}}</h2>
+	</div>
+	<div id="two">
+		<!-- html文本格式化 -->
+		<h2 v-html="data"></h2>
+	</div>
+	<div id="three">
+		<h2 v-text="data">{{data}}</h2>
 	</div>
 	<script>
 		new Vue({
@@ -27,6 +37,24 @@
 				array: [1, 2, 3, 4, 5]
 			}
 		});
+		new Vue({
+			el: "#one",
+			data: {
+				data:"once"
+			}
+		})
+		new Vue({
+			el: '#two',
+			data: {
+				data:"<a href='https://www.baidu.com'>百度</a>"
+			}
+		})
+		new Vue({
+			el:"#three",
+			data:{
+				data:"文字内容"
+			}
+		})
 	</script>
 </body>
 
