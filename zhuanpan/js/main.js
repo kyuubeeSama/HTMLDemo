@@ -1,3 +1,5 @@
+// 设置奖品图片
+// 开奖ajax
 $(document).ready(function(){
 	//旋转角度
 	var angles;
