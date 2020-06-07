@@ -117,7 +117,7 @@ $(document).ready(function(){
 	            endAngle = startAngle+Math.PI*(1/4);
 	            ctx.save();
 	            ctx.beginPath(); 
-	            ctx.arc(150,150,100, startAngle, endAngle, false);
+	            ctx.arc(150,150,90, startAngle, endAngle, false);
 	            ctx.lineWidth = 120;
 	            if (i%2 == 0) {
 	            	ctx.strokeStyle =  color[0];
