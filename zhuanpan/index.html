@@ -6,30 +6,145 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
-<script type="text/javascript" src="js/main.js">
-</script>
+<script type="text/javascript" src="js/main.js"></script>
+	<link href="css/window.css" rel="stylesheet" type="text/css">
+	<link href="css/common.css" rel="stylesheet" type="text/css">
+	<style type="text/css">
+		html{ overflow-y:scroll}
+		#box{width:100%; position: relative; margin: 10px auto;}
+		a{ text-decoration:none}
+		p{ margin:0px; padding:0px;}
+		ul,li{
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+		.Detail ul li {
+			display: inline-block;
+			background-color: rgba(0, 0, 0, 0.06);
+			border-radius: 10px;
+			width: 27%;
+			padding: 2%;
+			text-align: center;
+			margin: 0 0 2% 1%;
+		}
+		.ly-plate div.lottery-star{
+			width:120px;
+			height:120px;
+			position:absolute;
+			top:115px;
+			left:115px;
+			/*text-indent:-999em;
+            overflow:hidden;
+            background:url(rotate-star.png);
+            -webkit-transform:rotate(0deg);*/
+			outline:none
+		}
+		.ly-plate div.lottery-star #lotteryBtn,#lotteryBtnf{
+			cursor: pointer;
+			position: absolute;
+			top:0;
+			left:0;
+			width:120px;
+			height:120px;
+			*left:-107px
+		}
+	</style>
 </head>
 	<!-- 设置背景图片 -->
-<body style="background-image: url(img/yszpbg.jpg);background-size: 100%,100%;background-repeat: no-repeat;">
-	<!-- 模仿地址https://wechat.huangxf.com/lottery/lottery/rotate/index.php?lid=1 -->
-	<!-- 转盘div位置 -->
-<div class="turnplate_box">
-	<canvas id="myCanvas" width="300px" height="300px">抱歉！浏览器不支持。</canvas>
-	<canvas id="myCanvas01" width="200px" height="200px">抱歉！浏览器不支持。</canvas>
-	<canvas id="myCanvas03" width="200px" height="200px">抱歉！浏览器不支持。</canvas>
-	<canvas id="myCanvas02" width="150px" height="150px">抱歉！浏览器不支持。</canvas>
-	<button id="tupBtn" class="turnplatw_btn"></button>
-</div>
-<!-- 奖品介绍 -->
-<div id="goods" style="width: 100%;height: 120px;background-color: blue;margin-top: -100px;">
-	<div style="width: 30%;height: 100px;background-color: yellow;float: left;margin-left: 2.5%;margin-top: 10px;">
-		<div></div>
-	</div>
-	<div style="width: 30%;height: 100px;background-color: yellow;float: left;margin-left: 2.5%;margin-top: 10px"></div>
-	<div style="width: 30%;height: 100px;background-color: yellow;float: left;margin-left: 2.5%;margin-top: 10px"></div>
-</div>
-<!-- 中奖用户 -->
+<body style="background-image: url(image/yszpbg.jpg);background-size: 100%,100%;background-repeat: no-repeat;background-color: rgb(216, 38, 28);">
+	<div id="box">
+		<div class="turnplate_box">
+			<canvas id="myCanvas" width="300px" height="300px">抱歉！浏览器不支持。</canvas>
+			<canvas id="myCanvas01" width="200px" height="200px">抱歉！浏览器不支持。</canvas>
+			<canvas id="myCanvas03" width="200px" height="200px">抱歉！浏览器不支持。</canvas>
+			<canvas id="myCanvas02" width="150px" height="150px">抱歉！浏览器不支持。</canvas>
+			<button id="tupBtn" class="turnplatw_btn"></button>
+		</div>
 
+		<div class="actPeople">已有 <span>52</span> 人参与</div>
+		<input type="hidden" id="curtimes1" value="0">
+		<input type="hidden" id="curtimes3" value="0">
+		<div class="boxcontent boxwhite" id="verify_form" style="display:none">
+			<div class="box">
+				<div class="title-red">验证抽奖</div>
+				<div class="Detail">
+					请输入抽奖码	<input type="text" class="px" placeholder="" id="verify_code" value="">
+					<input class="pxbtn" id="verify" type="button" value="确定">
+				</div>
+			</div>
+		</div>
+
+		<div class="boxcontent boxwhite">
+			<div class="box">
+				<div class="title-red">奖品设置：</div>
+				<div class="Detail">
+					<div class="list prize">
+						<dl>
+							<dt style="overflow: hidden; height: 93px;" class="imgCont">
+								<img text="iPhone11 Pro Max" src="image/iphone11pro.png">
+							</dt>
+							<dd>
+								<b>一等奖</b>
+								<br>iPhone11 Pro Max
+							</dd>
+						</dl>
+						<dl>
+							<dt style="overflow: hidden; height: 93px;" class="imgCont">
+								<img text="888元现金红包" src="image/888.png">
+							</dt>
+							<dd>
+								<b>二等奖</b>
+								<br>888元现金红包
+							</dd>
+						</dl>
+						<dl>
+							<dt style="overflow: hidden; height: 93px;" class="imgCont">
+								<img text="神秘礼品" src="image/present.png">
+							</dt>
+							<dd>
+								<b>三等奖</b>
+								<br>神秘礼品</dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="boxcontent boxwhite" style="display:block">
+			<div class="box">
+				<div class="title-red">活动说明：</div>
+				<div class="Detail">
+					<p>这是一个测试的活动！仅供预览体验~<br>大转盘图片、奖品图片和页面背景图都可以在后台上传，实现界面自定义。更多功能请看演示后台！</p>				<hr>
+					活动时间：2018-08-08 08:00至2088-08-08 08:00		<br><br>
+					<div id="times">
+						<div style="display:none">
+							今日还有 <span id="curtimes7">999999</span> 次抽奖机会<br>
+						</div>
+						<div style="display:none">
+							剩余总抽奖次数：<span id="curtimes5">999999</span><br>
+						</div>
+						<div style=" display:none">
+							每天可抽奖次数：999999次，您今天已抽奖<span id="curtimes2">0</span>次
+						</div>
+						<div style=" display:none">
+							总共可抽奖次数：999999，您总共已抽奖<span id="curtimes4">0</span>次
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<div class="boxcontent boxwhite">
+			<div class="box">
+				<div class="title-red">最新中奖名单：</div>
+				<div class="Detail">
+					<marquee align="left" behavior="scroll" direction="up" height="80" hspace="0" vspace="0" loop="-1" scrollamount="2" scrolldelay="100">
+						薛** 137****0066 iPhone11 Pro Max 2020-06-06<br>薛** 137****0066 iPhone11 Pro Max 2020-06-06<br>石** 189****4999 iPhone11 Pro Max 2020-06-06<br>石** 189****4999 iPhone11 Pro Max 2020-06-06<br>几** 157****0428 iPhone11 Pro Max 2020-06-04<br>锋** 185****8846 iPhone11 Pro Max 2020-06-04<br>锋** 185****8846 iPhone11 Pro Max 2020-06-04<br>锋** 185****8846 iPhone11 Pro Max 2020-06-04<br>张** 138****0901 iPhone11 Pro Max 2020-06-02<br>    </marquee>
+				</div>
+			</div>
+		</div>
+	</div>
 <!-- 更改系统默认弹窗 -->
 <script type="text/javascript">
 window.alert = function(str)
